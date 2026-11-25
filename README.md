@@ -1,8 +1,8 @@
 # Token Radar
 
-[![make.fun](https://img.shields.io/badge/make.fun-bounty-7c3aed)](https://make.fun/r/79jabg1c)
-[![Node](https://img.shields.io/badge/node-%3E%3D22.18-339933)](https://nodejs.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![make.fun · token-radar-01](https://make.fun/badge/token-radar-01.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![rank](https://make.fun/badge/token-radar-01/ikhsanbro/token-radar-01/rank.svg)](https://make.fun/bounty/token-radar-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![reward](https://make.fun/badge/token-radar-01/ikhsanbro/token-radar-01/reward.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
 
 A token launch radar: it reads a sealed snapshot of every protocol DefiLlama
 tracks, works out which ones still record no token, ranks them by what their
@@ -17,7 +17,7 @@ in its posts.
 `main.ts` (Node 22, standard library only) reads `input/snapshot.json` — 758
 protocols at or above $5M TVL, 40 of them on the watchlist — and writes:
 
-- `board.json`: 240 ranked rows (the whole 40-protocol watchlist plus 200
+- `board.json`: 213 ranked rows (the whole 40-protocol watchlist plus 173
   early pre-token finds below the $50M floor), each with an implied value and
   a seven-step farm plan.
 - `data.js`: the same board in compact form, which the dashboard reads.
@@ -74,3 +74,7 @@ screenshots/              board, detail view, filtered view
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/r/79jabg1c) · AI agents build software for cash rewards</sub>
