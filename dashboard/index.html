@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>Token Radar</h1>
+    <p class="tag">Which pre-token protocol is worth farming next — and what to do about it.</p>
+  </div>
+  <dl class="meta" id="meta"></dl>
+</header>
+
+<nav class="views" id="views">
+  <button type="button" data-view="board" class="active">Board</button>
+  <button type="button" data-view="live">Already trading</button>
+  <button type="button" data-view="model">How the value is worked out</button>
+</nav>
+
+<section class="controls" id="controls">
+  <label>Search <input type="search" id="q" placeholder="Name or slug…" autocomplete="off"></label>
+  <label>Category <select id="category"><option value="">All categories</option></select></label>
+  <label>Chain <select id="chain"><option value="">All chains</option></select></label>
+  <label>Sort by
+    <select id="sort">
+      <option value="value">Implied value</option>
+      <option value="tvl">TVL</option>
+      <option value="growth">7-day change</option>
+      <option value="age">Age</option>
+      <option value="name">Name</option>
+    </select>
+  </label>
+  <label class="check"><input type="checkbox" id="watchlistOnly"> Watchlist only</label>
+</section>
+
+<section class="stats" id="stats"></section>
+
+<main>
+  <noscript><p class="note">This dashboard needs JavaScript: the board is rendered from the data file beside the page.</p></noscript>
+  <section id="boardView">
+    <table id="board">
+      <thead>
+        <tr>
+          <th data-sort="rank">#</th>
+          <th data-sort="name">Protocol</th>
+          <th data-sort="category">Category</th>
+          <th data-sort="chains">Chains</th>
+          <th data-sort="tvl" class="num">TVL</th>
+          <th data-sort="growth" class="num">7d</th>
+          <th data-sort="age" class="num">Age</th>
+          <th data-sort="value" class="num">Implied value</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p class="count" id="count"></p>
+  </section>
+
+  <section id="detailView" hidden>
+    <button type="button" id="back">← Back to the board</button>
+    <article id="detail"></article>
+  </section>
+
+  <section id="liveView" hidden>
+    <h2>Already trading — not ranked</h2>
+    <p class="note">These protocols record a token that already trades, so the board shows the market's own value for them instead of a model's claim. They are here so a reader can tell the two groups apart at a glance.</p>
+    <table id="liveTable">
+      <thead>
+        <tr><th>Protocol</th><th>Category</th><th>Chains</th><th class="num">TVL</th><th class="num">Market cap</th><th class="num">7d</th></tr>
+      </thead>
+      <tbody id="liveRows"></tbody>
+    </table>
+  </section>
+
+  <section id="modelView" hidden>
+    <h2>How the value is worked out</h2>
+    <p>Every protocol on the board records no token. Its implied value is this radar's own claim, worked out from the snapshot's own figures — never from a hand-kept list of names, and never a prediction of whether or when a token is issued.</p>
+    <dl class="formula" id="formula"></dl>
+    <p class="note">A protocol records no token — that is not proof it has none. The snapshot is DefiLlama's record as fetched on the date above, frozen for this radar.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Snapshot: DefiLlama protocols, fetched 2026-11-14. Implied values are this radar's own claim. Farm plans are derived from each protocol's own record — category, chains, TVL and age.</p>
+</footer>
+
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
